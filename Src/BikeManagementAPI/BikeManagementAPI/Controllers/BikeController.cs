@@ -10,7 +10,7 @@ namespace BikeManagementAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetBikes()
         {
-            return Ok();
+            return Ok("test");
         }
     }
 }
