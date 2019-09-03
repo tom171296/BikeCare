@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -52,7 +51,7 @@ namespace BikeManagementAPI
             });
         }
 
-        private void AddAuthentication(IServiceCollection services)
+        protected virtual void AddAuthentication(IServiceCollection services)
         {
             services.AddAuthentication(options =>
             {
