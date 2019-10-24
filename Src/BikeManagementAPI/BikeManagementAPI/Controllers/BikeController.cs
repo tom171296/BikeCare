@@ -1,34 +1,37 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BikeManagementAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace BikeManagementAPI.Controllers
 {
+    /// <summary>
+    ///     Controller that handles all bike actions.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [Consumes("application/json")]
     public class BikeController : Controller
     {
-        [HttpGet]
-        [Route("all")]
-        public async Task<IActionResult> GetAll()
+        /// <summary>
+        ///     Register a new bike.
+        /// </summary>
+        /// <remarks>
+        ///
+        ///     Sample request:
+        ///
+        ///
+        ///
+        /// </remarks>
+        /// <returns>A newly registered bike.</returns>
+        /// <response code="201">Returns a newly registered bike.</response>
+        /// <response code="400">If the request is invalid.</response>
+        [HttpPut]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        [Produces("application/json")]
+        public async Task<ActionResult<Bike>> RegisterNewBike()
         {
-            return Ok("test");
-        }
-
-        [HttpGet]
-        [Route("private")]
-        [Authorize]
-        public async Task<IActionResult> testPrivate()
-        {
-            return Ok("test-private");
-        }
-
-        [HttpGet]
-        [Route("private-scoped")]
-        [Authorize("read:bike")]
-        public async Task<IActionResult> testPrivateScoped()
-        {
-            return Ok("test-scoped");
+            return Created("", null);
         }
     }
 }

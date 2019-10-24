@@ -1,4 +1,7 @@
 ﻿using BikeManagementAPITests.Support.Context;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace BikeManagementAPITests.StepDefinitions.When
@@ -6,17 +9,27 @@ namespace BikeManagementAPITests.StepDefinitions.When
     [Binding]
     public class WhenBike
     {
-        private readonly UserContext _userContext;
+        private readonly UserContext userContext;
 
         public WhenBike(UserContext userContext)
         {
-            _userContext = userContext;
+            this.userContext = userContext;
         }
 
         [When(@"I register a new bike")]
-        public void WhenIRegisterANewBike()
+        public async Task WhenIRegisterANewBike()
         {
-            ScenarioContext.Current.Pending();
+            // Make call to localhost
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Put,
+                RequestUri = new Uri("http://localhost:80/api/bike")
+            };
+
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.SendAsync(request);
+            }
         }
     }
 }
