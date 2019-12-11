@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeManagementAPI", "BikeMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeManagementAPITests", "BikeManagementAPITests\BikeManagementAPITests.csproj", "{D11421B8-686A-4797-B94E-4D37F4FE352C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{B2E96D18-3461-4EF9-A33F-A09DA7EFE7BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Events\Messages.csproj", "{B2E96D18-3461-4EF9-A33F-A09DA7EFE7BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
