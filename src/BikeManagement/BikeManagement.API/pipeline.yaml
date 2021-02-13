@@ -1,0 +1,12 @@
+name: BikeManagement.API  # build numbering format
+
+variables: # several syntaxes, see specific section
+
+stages: 
+- stage: build
+  displayName: build
+  pool: kubernetescluster
+  jobs:
+  - job: A
+    steps: 
+    - bash: kubectl get pods
