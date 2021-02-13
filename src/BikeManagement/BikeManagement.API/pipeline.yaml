@@ -9,4 +9,4 @@ stages:
   jobs:
   - job: TestJob
     steps: 
-    - bash: kubectl get pods
+    - bash: kubectl get pods --all-namespaces
