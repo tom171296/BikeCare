@@ -1,6 +1,6 @@
-name: BikeManagement.API  # build numbering format
+name: $(Date:yyyyMMdd)$(Rev:.r)
 
-variables: # several syntaxes, see specific section
+# variables: 
 
 stages: 
 - stage: build
