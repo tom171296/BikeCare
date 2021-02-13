@@ -7,6 +7,6 @@ stages:
   displayName: build
   pool: kubernetescluster
   jobs:
-  - job: A
+  - job: TestJob
     steps: 
     - bash: kubectl get pods
