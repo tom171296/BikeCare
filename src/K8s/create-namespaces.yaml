@@ -1,6 +1,6 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
-tasks:
+steps:
 - task: Kubernetes@1
   displayName: create development namespace
   inputs:
