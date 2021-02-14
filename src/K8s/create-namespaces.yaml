@@ -1,0 +1,8 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+tasks:
+- task: Kubernetes@1
+  displayName: create development namespace
+  inputs:
+    command: create
+    useConfigurationFile: ./namespaces/namespace-development.yaml
