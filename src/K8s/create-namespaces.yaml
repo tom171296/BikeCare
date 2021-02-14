@@ -3,6 +3,7 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 pool: kubernetescluster 
 
 jobs:
-- job: Create developments namespace
+- job: CreateDevelopmentNamespace
+  displayName: Create development namespace
   steps:
   - bash: kubectl create -f ./namespaces/namespace-development.yaml
