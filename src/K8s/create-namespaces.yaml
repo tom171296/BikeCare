@@ -7,3 +7,4 @@ jobs:
   displayName: Create development namespace
   steps:
   - bash: kubectl create -f ./namespaces/namespace-development.yaml
+    workingDirectory: ./src/k8s
