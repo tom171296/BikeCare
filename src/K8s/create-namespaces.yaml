@@ -2,9 +2,7 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 
 pool: kubernetescluster 
 
-steps:
-- task: Kubernetes@1
-  displayName: create development namespace
-  inputs:
-    command: create
-    useConfigurationFile: ./namespaces/namespace-development.yaml
+jobs:
+- job: Create developments namespace
+  steps:
+  - bash: kubectl create -f ./namespaces/namespace-development.yaml
