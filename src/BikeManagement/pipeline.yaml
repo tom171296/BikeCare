@@ -1,0 +1,19 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+variables: 
+  imageName: BikeManagement.API
+
+stages: 
+- stage: build
+  displayName: build
+  pool: kubernetescluster
+  jobs:
+  - job: TestJob
+    steps: 
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        repository: $(imageName)
+        command: build
+        Dockerfile: ./BikeManagement.API/Dockerfile
+
