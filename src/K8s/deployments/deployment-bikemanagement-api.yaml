@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bikemanagement.api
+spec:
+  selector:
+    matchLabels:
+      app: bikemanagement.api
+  template:
+    metadata:
+      labels:
+        app: bikemanagement.api
+    spec:
+      containers:
+      - name: bikemanagement.api
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
