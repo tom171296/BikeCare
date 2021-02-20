@@ -23,6 +23,6 @@ jobs:
         with:
           context: ./src/BikeManagement/BikeManagement.API/
           push: true
-          tags: tom171296/bikemanagement-api:latest
+          tags: ghcr.io/tom171296/bikemanagement-api:latest
 
 
