@@ -22,6 +22,6 @@ jobs:
         with:
           context: ./src/BikeManagement/BikeManagement.API/
           push: true
-          tags: BikeManagement-API:latest
+          tags: bikemanagement-api:latest
 
 
