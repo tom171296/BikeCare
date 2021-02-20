@@ -21,4 +21,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: create development namespace
         run: kubectl create -f ./namespaces/namespace-development.yaml
-        working-directory: .src/K8s
+        working-directory: ./src/K8s
