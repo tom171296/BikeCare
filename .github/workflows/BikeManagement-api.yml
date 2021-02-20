@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./src/BikeManagement/BikeManagement.API/
-          repository: tom171296/bikecare/bikemanagement-api
-          tag_with_ref: true
+          push: true
+          tags: BikeManagement-API:latest
 
 
