@@ -16,7 +16,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: tom171296/BikeCare/bikemanagement-api
+          repository: tom171296/bikecare/bikemanagement-api
           tag_with_ref: true
 
 
