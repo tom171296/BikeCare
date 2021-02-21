@@ -42,10 +42,6 @@ jobs:
         - name: Set cluster context
           run: kubectl config use-context $context_name
           
-        # - name: basic deployment
-        #   uses: Azure/k8s-deploy@v1.3
-        #   with:
-        #     namespace: 'development'
-        #     manifests: |
-        #         ./src/K8s/deployments/deployment-bikemanagement-api.yaml
+        - name: Set cluster context
+          run: kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
           
