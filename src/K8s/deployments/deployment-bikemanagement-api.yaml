@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: bikemanagement.api
-        image: <Image>
+        image: ghcr.io/tom171296/bikemanagement-api:latest
         resources:
           limits:
             memory: "128Mi"
