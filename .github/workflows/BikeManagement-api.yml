@@ -39,6 +39,14 @@ jobs:
       runs-on: [self-hosted, kubernetescluster]
       
       steps:
+
+        - name: Login to GitHub Container Registry
+          uses: docker/login-action@v1
+          with:
+            registry: ghcr.io
+            username: ${{ github.repository_owner }}
+            password: ${{ secrets.CR_PAT }}
+
         - name: Set cluster context
           run: kubectl config use-context $context_name
           
