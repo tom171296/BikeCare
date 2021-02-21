@@ -40,7 +40,7 @@ jobs:
       
       steps:
         - name: Set cluster context
-          run: kubectl config use-context {{$context_name}}
+          run: kubectl config use-context $context_name
           
         # - name: basic deployment
         #   uses: Azure/k8s-deploy@v1.3
