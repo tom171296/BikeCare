@@ -4,9 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
+
   build_push_image:
+
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
+    
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
@@ -26,12 +29,16 @@ jobs:
           tags: ghcr.io/tom171296/bikemanagement-api:latest
     
   developement_deployment:
+  
       needs: [build_push_image]
       name: release to kubernetes cluster
       environment:
         name: Development
       runs-on: [self-hosted, kubernetescluster]
+      
       steps:
+        - name: 
+          
         - name: basic deployment
           uses: Azure/k8s-deploy@v1.3
           with:

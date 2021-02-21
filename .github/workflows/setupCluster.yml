@@ -9,7 +9,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  setup:
+  setup-namespaces:
     # The type of runner that the job will run on
     runs-on: [self-hosted, kubernetescluster]
 
@@ -20,5 +20,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: create development namespace
-        run: kubectl create -f ./namespaces/namespace-development.yaml
+        run: kubectl create -f ./namespaces/namespace-development.json
         working-directory: ./src/K8s
+
+      - name: create development context
+        run: kubectl config set-context development --namespace=development
