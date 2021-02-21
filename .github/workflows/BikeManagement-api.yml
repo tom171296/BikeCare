@@ -24,5 +24,15 @@ jobs:
           context: ./src/BikeManagement/BikeManagement.API/
           push: true
           tags: ghcr.io/tom171296/bikemanagement-api:latest
-
-
+    
+  release_to_cluster:
+      name: release to kubernetes cluster
+      runs-on: [self-hosted, kubernetescluster]
+      steps:
+        - name: basic deployment
+          uses: Azure/k8s-deploy@v1.3
+          with:
+            namespace: 'development'
+            manifests: |
+                ./src/K8s/deployments/deployment-bikemanagement-api.yaml
+          
