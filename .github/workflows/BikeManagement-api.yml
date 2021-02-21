@@ -26,6 +26,7 @@ jobs:
           tags: ghcr.io/tom171296/bikemanagement-api:latest
     
   release_to_cluster:
+      needs: [push_to_registry]
       name: release to kubernetes cluster
       runs-on: [self-hosted, kubernetescluster]
       steps:
