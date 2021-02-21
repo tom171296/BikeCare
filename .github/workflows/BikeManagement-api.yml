@@ -43,5 +43,5 @@ jobs:
           run: kubectl config use-context $context_name
           
         - name: deploy bikemanagement-api to dev
-          run: kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
+          run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
           
