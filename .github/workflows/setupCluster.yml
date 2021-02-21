@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: create development namespace
-        run: kubectl create -f ./namespaces/namespace-development.json
-        working-directory: ./src/K8s
+      # - name: create development namespace
+      #   run: kubectl create -f ./namespaces/namespace-development.json
+      #   working-directory: ./src/K8s
 
       - name: create development context
         run: kubectl config set-context development --namespace=development
