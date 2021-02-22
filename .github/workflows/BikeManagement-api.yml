@@ -35,14 +35,11 @@ jobs:
       environment:
         name: Development
       env:
-        context_name: development
+        namespace_name: development
       runs-on: [self-hosted, kubernetescluster]
       
       steps:
-
-        - name: Set cluster context
-          run: kubectl config use-context $context_name
           
         - name: deploy bikemanagement-api to dev
-          run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
+          run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml --namespace=$namespace_name
           
