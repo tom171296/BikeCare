@@ -15,7 +15,6 @@ spec:
       - name: bikemanagement-api
         image: ghcr.io/tom171296/bikemanagement-api:latest
         imagePullPolicy: Always
-        command: [ "echo", "SUCCESSFULLY PULLED IMAGE" ]
         resources:
           limits:
             memory: "128Mi"
