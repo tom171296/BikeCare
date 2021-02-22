@@ -34,8 +34,6 @@ jobs:
       name: release to kubernetes cluster
       environment:
         name: Development
-      env:
-        namespace_name: development
       runs-on: [self-hosted, kubernetescluster]
       
       steps:
@@ -43,6 +41,5 @@ jobs:
           uses: actions/checkout@v2
           
         - name: deploy bikemanagement-api to dev
-          run: sudo kubectl apply -f ./deployment-bikemanagement-api.yaml -n=$namespace_name
+          run: sudo kubectl -n=development apply -f ./deployment-bikemanagement-api.yaml 
           working-directory: ./src/K8s/deployments/
-          
