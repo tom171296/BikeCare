@@ -16,8 +16,6 @@ spec:
       - name: bikemanagement-api
         image: ghcr.io/tom171296/bikemanagement-api:latest
         imagePullPolicy: Always
-        imagePullSecrets:
-        - name: regcred
         command: [ "echo", "SUCCESSFULLY PULLED IMAGE" ]
         resources:
           limits:
@@ -25,3 +23,6 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
+      
+      imagePullSecrets:
+        - name: regcred
