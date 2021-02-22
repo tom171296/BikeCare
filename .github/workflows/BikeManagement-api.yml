@@ -41,5 +41,5 @@ jobs:
       steps:
           
         - name: deploy bikemanagement-api to dev
-          run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml --namespace=$namespace_name
+          run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
           
