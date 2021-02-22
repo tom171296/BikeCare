@@ -25,3 +25,11 @@ jobs:
 
       - name: create development context
         run: kubectl config set-context development --namespace=development
+
+      - name: create secret
+        run: kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+
+
+
+
+        
