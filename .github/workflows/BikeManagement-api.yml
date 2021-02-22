@@ -39,6 +39,8 @@ jobs:
       runs-on: [self-hosted, kubernetescluster]
       
       steps:
+        - name: Check out the repo
+          uses: actions/checkout@v2
           
         - name: deploy bikemanagement-api to dev
           run: sudo kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
