@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bikemanagement.api
+  name: bikemanagement-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: bikemanagement.api
+      app: bikemanagement-api
   template:
     metadata:
       labels:
-        app: bikemanagement.api
+        app: bikemanagement-api
     spec:
       containers:
-      - name: bikemanagement.api
+      - name: bikemanagement-api
         image: ghcr.io/tom171296/bikemanagement-api:latest
         imagePullPolicy: Always
         command: [ "echo", "SUCCESSFULLY PULLED IMAGE" ]
