@@ -41,5 +41,5 @@ jobs:
           uses: actions/checkout@v2
           
         - name: deploy bikemanagement-api to dev
-          run: sudo kubectl -n=development apply -f ./deployment-bikemanagement-api.yaml 
+          run: sudo kubectl config view
           working-directory: ./src/K8s/deployments/
