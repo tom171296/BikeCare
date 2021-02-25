@@ -1,12 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-<<<<<<< HEAD
   name: bikemanagement.api
   namespace: development
-=======
-  name: bikemanagement-api
->>>>>>> 3a401bdedcb0eab4a619d2a120dc1b04519d3288
 spec:
   selector:
     matchLabels:
