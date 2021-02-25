@@ -4,6 +4,7 @@ metadata:
   name: bikemanagement.api
   namespace: development
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: bikemanagement-api
