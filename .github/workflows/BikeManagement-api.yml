@@ -34,14 +34,12 @@ jobs:
       name: release to kubernetes cluster
       environment:
         name: Development
-      env:
-        context_name: development
       runs-on: [self-hosted, kubernetescluster]
       
       steps:
-
-        - name: Set cluster context
-          run: kubectl config use-context $context_name
+        - name: Check out the repo
+          uses: actions/checkout@v2
           
         - name: deploy bikemanagement-api to dev
-          run: kubectl apply -f ./src/K8s/deployments/deployment-bikemanagement-api.yaml
+          run: kubectl apply -f ./deployment-bikemanagement-api.yaml 
+          working-directory: ./src/K8s/deployments/
