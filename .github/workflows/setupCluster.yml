@@ -25,12 +25,12 @@ jobs:
       # - name: create secret
       #   run: kubectl -n=development create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
 
-      # - name: Create istio operator namespace
+      # - name: Create istio system namespace
       #   run: kubectl create -f ./namespaces/namespace-istio-system.json
       #   working-directory: ./src/K8s
 
-      # - name: apply istio operator
-      #   run: kubectl apply -f ./operators/operator-istio.yaml
+      # - name: apply istio operator configuration
+      #   run: kubectl apply -f ./operators/istio-configurationProfile.yaml
       #   working-directory: ./src/K8s
 
       - name: apply ingress
