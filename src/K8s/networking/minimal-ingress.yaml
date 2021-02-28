@@ -5,6 +5,8 @@ metadata:
   namespace: development
   labels:
       name: minimal-ingress
+  annotations:
+    kubernetes.io/ingress.class: istio
 spec:
   rules:
   - http:
