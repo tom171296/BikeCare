@@ -26,3 +26,16 @@ spec:
       
       imagePullSecrets:
         - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bikemanagement-api
+spec:
+  selector:
+    app: bikemanagement-api
+  ports:
+  - port: 12345
+    targetPort: 80
+
