@@ -7,10 +7,10 @@ metadata:
       name: minimal-ingress
 spec:
   rules:
-  - http:
+  - host: cluster.com
+    http:
       paths:
-      - host: cluster.com
-        pathType: Prefix
+      - pathType: Prefix
         path: "/bikemanagement"
         backend:
           service:
