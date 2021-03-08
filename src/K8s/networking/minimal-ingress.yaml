@@ -9,7 +9,8 @@ spec:
   rules:
   - http:
       paths:
-      - pathType: Prefix
+      - host: cluster.com
+        pathType: Prefix
         path: "/bikemanagement"
         backend:
           service:
