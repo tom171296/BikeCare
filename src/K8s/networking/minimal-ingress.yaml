@@ -10,10 +10,6 @@ spec:
   - host: cluster.com
     http:
       paths:
-      - pathType: Prefix
-        path: "/bikemanagement"
-        backend:
-          service:
-            name: bikemanagement-api
-            port:
-              number: 12345
+      - backend:
+          serviceName: bikemanagement-api
+          servicePort: 12345
