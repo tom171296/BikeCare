@@ -5,8 +5,8 @@ metadata:
   namespace: development
   labels:
       name: minimal-ingress
-      kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName : nginx
   rules:
   - host: cluster.com
     http:
