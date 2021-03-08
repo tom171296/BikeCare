@@ -10,7 +10,7 @@ spec:
   - host: cluster.com
     http:
       paths:
-      - path: /
+      - path: /bikemanagement
         pathType: Prefix
         backend:
           service:
