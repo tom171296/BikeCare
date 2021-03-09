@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  namespace: development
+  labels:
+      name: minimal-ingress
+      kubernetes.io/ingress.class: "nginx"
+spec:
+  ingressClassName : nginx
+  rules:
+  - host: cluster.com
+    http:
+      paths:
+      - path: /bikemanagement
+        pathType: Prefix
+        backend:
+          service:
+            name: bikemanagement-api
+            port:
+              number: 12345

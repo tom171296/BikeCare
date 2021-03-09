@@ -1,8 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bikemanagement-api
+  name: bikemanagement.api
+  namespace: development
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: bikemanagement-api
@@ -24,3 +26,17 @@ spec:
       
       imagePullSecrets:
         - name: regcred
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bikemanagement-api
+  namespace: development
+spec:
+  selector:
+    app: bikemanagement-api
+  ports:
+  - port: 12345
+    targetPort: 80
+

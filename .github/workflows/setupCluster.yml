@@ -18,18 +18,26 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: create development namespace
-        run: kubectl create -f ./namespaces/namespace-development.json
+      # - name: create development namespace
+      #   run: kubectl create -f ./namespaces/namespace-development.json
+      #   working-directory: ./src/K8s
+
+      # - name: create secret
+      #   run: kubectl -n=development create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+
+      # - name: Create istio system namespace
+      #   run: kubectl create -f ./namespaces/namespace-istio-system.json
+      #   working-directory: ./src/K8s
+
+      # - name: apply istio operator configuration
+      #   run: kubectl apply -f ./operators/istio-configurationProfile.yaml
+      #   working-directory: ./src/K8s
+
+      - name: apply ingress
+        run: kubectl apply -f ./networking/minimal-ingress.yaml
         working-directory: ./src/K8s
 
-      - name: create development context
-        run: kubectl config set-context development --namespace=development
-
-      - name: create secret
-        run: kubectl -n=development create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
-
-
+        
 
 
         
