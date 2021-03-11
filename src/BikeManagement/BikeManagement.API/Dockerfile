@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
-COPY ./BikeManagement.API/BikeManagement.API.csproj ./
+COPY ./BikeManagement.API.csproj ./
 RUN dotnet restore "./BikeManagement.API.csproj"
 
 # copy everything else and build app
-COPY ./BikeManagement.API ./
+COPY ./ ./
 RUN dotnet build && dotnet publish -c release -o /app --no-restore
 
 # final stage/image
