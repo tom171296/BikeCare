@@ -11,7 +11,7 @@ COPY ./ ./
 RUN dotnet build && dotnet publish -c release -o /app --no-restore
 
 # final stage/image
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.3-focal-arm64v8
 WORKDIR /app
 COPY --from=build /app ./
 
