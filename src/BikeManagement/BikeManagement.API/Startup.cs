@@ -30,7 +30,7 @@ namespace BikeManagement.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (!string.IsNullOrEmpty(Configuration["PathBase"]))
-                app.UsePathBase(Configuration["PathBase"]);
+               app.UsePathBase(Configuration["PathBase"]);
 
             if (env.IsDevelopment())
             {
@@ -40,7 +40,7 @@ namespace BikeManagement.API
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BikeManagement.API v1"));
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
