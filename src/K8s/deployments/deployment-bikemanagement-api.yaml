@@ -28,6 +28,7 @@ spec:
         - name: regcred
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -39,4 +40,3 @@ spec:
   ports:
   - port: 12345
     targetPort: 80
-
