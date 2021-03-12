@@ -11,7 +11,7 @@ spec:
   - host: cluster.com
     http:
       paths:
-      - path: /
+      - path: /bikemanagement
         backend:
           serviceName: bikemanagement-api
           servicePort: 80
