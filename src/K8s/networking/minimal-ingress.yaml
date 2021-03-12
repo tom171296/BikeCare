@@ -18,4 +18,4 @@ spec:
           service:
             name: bikemanagement-api
             port:
-              number: 12345
+              number: 80
